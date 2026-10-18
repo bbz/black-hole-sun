@@ -1,0 +1,21 @@
+# The roster of people whose commits may land.
+#
+# CONTRIBUTING.md: each commit's author is the person who signs it off, a `Signed-off-by:` may only
+# name someone who can make that certification, and a co-author trailer names a human contributor.
+# The `authorship` check (.github/workflows/authorship.yml) enforces that against this file on
+# every pull request. The DCO app and cla-assistant can't: they match a trailer against an author
+# field and record an OAuth flow, and neither can ask whether a person stands behind the account.
+#
+# The check reads this file from the pull request's base branch, so a pull request can't admit its
+# own author. Adding a line is a maintainer commit.
+#
+# Format: one person per line. The first token is the name we file them under; every token is an
+# identity that person commits as. A token containing `@` is a git email (what a trailer is matched
+# on), anything else is a GitHub login (what an author or committer is matched on).
+#
+#   <login>  <email>  [<more emails>]   # when, and anything worth knowing
+
+bbz           429635+bbz@users.noreply.github.com              # maintainer
+
+# GitHub itself, as the committer of a merge or squash made through the web UI.
+web-flow      noreply@github.com                                # github.com merge button

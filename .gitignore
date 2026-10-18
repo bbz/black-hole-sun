@@ -1,0 +1,14 @@
+# Copied game files (copyrighted) - never commit
+/game/
+
+# Local working files (incl. build/ara_names.txt from tools/ara.py scan-names)
+/build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Build output
+tools/bhs/*.dll
+

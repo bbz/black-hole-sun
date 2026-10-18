@@ -1,0 +1,25 @@
+# The check that asks WHO a pull request's commits name. The DCO app matches a `Signed-off-by:`
+# string against the author field and cla-assistant records an OAuth flow; neither can tell whether
+# a person stands behind the account. This checks every author, committer and co-author trailer
+# against .github/AUTHORS.roster, read from the pull request's base ref (never its own tree), and
+# fails closed on anyone not listed, bots included.
+#
+# The rules live in vaelii/.github/actions/authorship, pinned by SHA: a tag can be repointed, a SHA
+# can't, and moving the pin is the review point for a rule change.
+#
+# `pull_request`, never `pull_request_target`: it reads public metadata and writes nothing, so a
+# fork's pull request gets no privilege from it.
+name: authorship
+on: pull_request
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  # The job name is the check name branch protection requires.
+  authorship:
+    name: authorship
+    runs-on: ubuntu-latest
+    steps:
+      - uses: vaelii/.github/actions/authorship@a973b4674126344fa7fb870c20d637c9d68b9022  # vaelii/.github@main, 2026-08-24
