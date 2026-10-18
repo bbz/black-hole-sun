@@ -15,7 +15,7 @@ Usage:
   python -I tools/cgpr.py scale-delays FILE.cgpr OUT.cgpr FACTOR
       multiply every message link delay by FACTOR (e.g. 0.05 to speed up a scripted sequence)
   python -I tools/cgpr.py scan-names [EXTRACTED_DIR] [BIN64_DIR]
-      build build/crc_names.json, the names the other commands print and accept, from your copy
+      write build/crc_names.json, the names the other commands print and accept, from your copy
       of the game (defaults: game/extracted, game/original/Bin64)
 
 Format (little-endian):
